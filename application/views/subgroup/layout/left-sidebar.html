@@ -1,0 +1,27 @@
+<div id=groups_sidebar>
+  <h1 class="title">組內連結</h1>
+  <ul>
+    <li><a href="index.php?cname=<{$group_name}>">最新消息</a></li>
+    <li><a href="aboutus.php?cname=<{$group_name}>">關於我們</a></li>
+    <li><a href="staff.php?cname=<{$group_name}>">成員介紹</a></li>
+    <li><a href="laws.php?cname=<{$group_name}>">法令規章</a></li>
+    <li><a href="sop.php?cname=<{$group_name}>">標準作業流程</a></li>
+    <li><a href="http://dsa.ntue.edu.tw/web/message.php">學生留言板</a></li>
+    <li><a href="../index.php">回學務處</a></li>
+  </ul>
+
+  <{if ($left_sidebar_items)}>
+  <h1 class="title">熱門連結專區</h1>
+  <ul id="adRotate">
+    <{foreach from=$left_sidebar_items key=k item=item}>
+      <li><a target="_blank" href="<{$item.url}>"><{$item.title}></a></li>
+    <{/foreach}>
+  <{/if}>
+  </ul>
+
+  <{if ($video)}>
+        <h1 class="title">宣導影片</h1>
+      <{$video.embedHtml}>
+      <div style="padding: 6px;border-bottom: 1px solid #D3D3D3;"><{$video.title}> </div>
+  <{/if}>
+</div>

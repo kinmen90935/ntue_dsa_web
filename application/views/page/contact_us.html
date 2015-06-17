@@ -1,0 +1,123 @@
+<{include file="layout/include_header.html"}>
+<style type="text/css">
+#mapDiv {
+  width: 400px;
+  height: 228px;
+}
+table {
+  margin:5px;
+  width: 95%;
+  border-collapse: collapse;
+}
+/* Zebra striping */
+tr:nth-of-type(odd) {
+  background: #eee;
+}
+th {
+  background: #333;
+  color: white;
+  font-weight: bold;
+}
+td, th {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+</style>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+        $(document).ready(function () {
+            var lat = 25.024406;
+            var lng = 121.544406;
+            var latlng = new google.maps.LatLng(lat, lng);
+            var mapOpts = {
+                zoom: 16,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("mapDiv"), mapOpts);
+        });
+    </script>
+</head><body>
+<div id="header_container">
+  <{include file="layout/header.html"}>
+    <map name="map">
+    <area shape=circle coords="20,20,25" href="https://http://dsa.ntue.edu.tw/">
+    </map>
+</div>
+<{include file="layout/menu.html"}>
+
+<div class="wrapper" id="slide_wrapper">
+  <{include file="layout/sliderT.html"}>
+</div>
+<div class="wrapper" id="main_wrapper">
+  <div id="main" class="wrap">
+    <div class="section group">
+      <div class="col span_3_of_12">
+        <{include file="layout/sidebar.html"}>
+      </div>
+      <div class="col span_9_of_12">
+        <h1 class="title">聯絡我們</h1>
+        <p>校址：10671臺北市大安區和平東路二段134號<br>
+          總機電話：02-2732-1104 02-6639-6688<br>
+          信箱：dsa@tea.ntue.edu.tw
+          <a href="mailto:dsa@tea.ntue.edu.tw"><font color="red"><u>與學務處聯絡</font></u></a></p>
+        <div id="mapDiv" class="box_con"> </div>
+        <br><br>
+        <table>
+          <thead>
+          <th>單位</th>
+            <th>傳真電話</th>
+            <th>學校分機</th>
+              </thead>
+          <tbody>
+            <tr>
+              <td>學務長室</td>
+              <td>(02)2735-5963</td>
+              <td>82042、82342</td>
+            </tr>
+            <tr>
+              <td>生活輔導組</td>
+              <td>(02)2732-6826</td>
+              <td>82043、82044、82055</td>
+            </tr>
+            <tr>
+              <td>課外活動組</td>
+              <td>(02)2732-6806</td>
+              <td>82022、82023、82024、
+                82045、82046</td>
+            </tr>
+            <tr>
+              <td>衛生保健組</td>
+              <td>(02)2738-6870</td>
+              <td>82047、82048</td>
+            </tr>
+            <tr>
+              <td>心理輔導組</td>
+              <td>(02)2738-4214</td>
+              <td>85111、85112、85113</td>
+            </tr>
+            <tr>
+              <td>軍訓室</td>
+              <td>(02)2736-5306</td>
+              <td>82051、82052、82053、
+                82056、82057</td>
+            </tr>
+            <tr>
+              <td>體育室</td>
+              <td>(02)2737-4154</td>
+              <td>83411、83412、83418、
+                83420</td>
+            </tr>
+            <tr>
+              <td>資源教室</td>
+              <td>(02)2732-9835</td>
+              <td>85011、85013</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<{include file="layout/footer.html"}>

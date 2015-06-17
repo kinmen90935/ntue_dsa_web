@@ -1,0 +1,37 @@
+<div id=groups_right>
+	<{if ($right_menu_items)}>
+	<h1 class="title">各組業務</h1>
+    <ul id=rightMenuBar>
+    <{foreach from=$right_menu_items key=k item=item}>
+      <li><a href="custom.php?custom_id=<{$k}>&cname=<{$group_name}>"><{$item}></a></li>
+    <{/foreach}>
+    </ul>
+    <{/if}>
+  	<h1 class="title">活動專區</h1>
+  	<div class="slider-wrapper theme-default" style="margin-left:10px;">
+    	<div id="slider" class="nivoSlider"> 
+		    <img src="<{$UPLOAD_ROOT}>/<{$group_name}>/activity/activity_1.jpg" data-thumb="../<{$UPLOAD_ROOT}>/<{$group_name}>activity/activity_1.jpg" alt="" /> <a href="http://dev7studios.com">
+		    <img src="<{$UPLOAD_ROOT}>/<{$group_name}>/activity/activity_2.jpg" data-thumb="../<{$UPLOAD_ROOT}>/<{$group_name}>activity/activity_2.jpg" alt="" title="<{$group_title|htmlspecialchars}>" /></a> 
+		    <img src="<{$UPLOAD_ROOT}>/<{$group_name}>/activity/activity_3.jpg" data-thumb="../<{$UPLOAD_ROOT}>/<{$group_name}>activity/activity_3.jpg" alt="" data-transition="slideInLeft" /> 
+		    <img src="<{$UPLOAD_ROOT}>/<{$group_name}>/activity/activity_4.jpg" data-thumb="../<{$UPLOAD_ROOT}>/<{$group_name}>activity/activity_4.jpg" alt="" title="#htmlcaption" /> 
+         </div>
+		  <div id="htmlcaption" class="nivo-html-caption"> <strong>國北教大學務處</strong><{$group_title|htmlspecialchars}>歡迎您</div>
+  	</div>
+  <h1 class="title">學務各組連結</h1>
+  <style type="text/css">
+  .menuList a{
+    color: #000;
+    text-decoration: none;
+  }
+  </style>
+  <ul class="menuList">
+    <li><a href="index.php?cname=life">生活輔導組</a></li>
+    <li><a href="index.php?cname=activity">課外活動組</a></li>
+    <li><a href="index.php?cname=health">衛生保健組</a></li>
+    <li><a href="index.php?cname=psy">心理輔導組</a></li>
+    <li><a href="index.php?cname=military">軍 訓 室</a></li>
+    <li><a href="index.php?cname=phy">體 育 室</a></li>
+    <li><a href="index.php?cname=rc">資源教室</a></li>
+    <li><a href="../index.php">回學務處</a></li>
+  </ul>
+</div>

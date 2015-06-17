@@ -1,0 +1,71 @@
+<{include file="layout/include_header.html"}>
+<style>
+
+	#laws_table {
+		text-align:left;
+		border:0;
+		cellspacing:0;
+		cellpadding:0;
+
+		letter-spacing: normal;
+		orphans: auto;
+		text-indent: 0px;
+		text-transform: none;
+		widows: auto;
+		word-spacing: 0px;
+		-webkit-text-stroke-width: 0px;
+
+		width: 100%;"
+	}
+	#laws_table td{
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 10pt;
+		line-height: 20px;
+		color: #666666;
+		border-bottom-width: 1pt;
+		border-bottom-style: dotted;
+		border-bottom-color: #d4d4d4;
+		padding-top: 3px;
+		padding-bottom: 3px;
+	}
+	#laws_table a{
+		padding:1px 4px;
+		background-color:#F30;
+		color:#FFF; -webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+	}
+</style>
+</head><body>
+<div id="header_container">
+	<{include file="layout/header.html"}>
+    <map name="map">
+    <area shape=circle coords="20,20,25" href="https://http://dsa.ntue.edu.tw/">
+    </map>
+</div>
+<{include file="layout/menu.html"}>
+
+<div class="wrapper" id="slide_wrapper">
+	<{include file="layout/sliderT.html"}>
+</div>
+<div class="wrapper" id="main_wrapper">
+	<div id="main" class="wrap">
+        <div class="section group">
+        	<div class="col span_3_of_12">
+				<{include file="layout/sidebar.html"}>
+			</div>
+        	<div class="col span_5_of_12">
+		      <h1 class="title">全處法令規章(亦可至各組下載)</h1>
+		      <{foreach from=$lawDatas item=data}>
+				<h3 style="border-bottom:#8B5555 dashed 1px;"><{$data.title|htmlspecialchars}></h3>
+				<{$data.data_html|htmlspecialchars_decode}>
+		      <{/foreach}>
+			</div>
+        	<div class="col span_4_of_12">
+				<{include file="layout/ad.html"}>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+<{include file="layout/footer.html"}>

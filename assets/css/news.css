@@ -1,0 +1,134 @@
+.themeSort {
+    height: 40px;
+    margin-left: -40px;
+}
+.themeSort .title {
+    float: left;
+    margin-top: 2px;
+    margin-top: 4px\9;
+    padding-right: 10px;
+}
+.themeSort ul,
+.themeSort ul li {
+	list-style:none;
+    float: left;
+    overflow: hidden;
+    font-size: 13px;
+}
+.themeSort a { text-decoration: none }
+.themeSortL span,
+.themeSortL .c span,
+.themeSortR span,
+.themeSortR .c span,
+.themeSortC span,
+.themeSortC .c span { background: url(../img/sortThemebg.png) repeat-x }
+.themeSortL .c i,
+.themeSortL i,
+.themeSortR i,
+.themeSortR .c i { background: url(../img/sortTheme.png) no-repeat }
+.themeSortL span {
+    background-position: 0 0;
+    border: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    float: left;
+    padding: 1px 4px 1px 3px;
+    height: 17px\9;
+    padding-top: 3px\9;
+    color: #333;
+}
+.themeSortL .c span {
+    background-position: 0 -21px;
+    color: #8D6600;
+    border: 1px solid #C5C5C5;
+    /* border-left: 0; */
+    font-weight: 700;
+}
+.themeSortL .c i { background-position: -20px 0 }
+.themeSortL i {
+    background-position: 0 0;
+    width: 10px;
+    height: 23px;
+    display: block;
+    float: left;
+}
+.themeSortC span {
+    background-position: 0 0;
+    border: 1px solid #ccc;
+    border-left: 0;
+    float: left;
+    padding: 1px 5px;
+    height: 17px\9;
+    padding-top: 3px\9;
+    color: #333;
+}
+.themeSortC .c span {
+    background-position: 0 -21px;
+    color: #E65A8D;
+    border: 1px solid #FFC2D9;
+    border-left: 0;
+    font-weight: 700;
+}
+.themeSortR { margin-left: -1px }
+.themeSortR span {
+    background-position: 0 0;
+    border: 1px solid #ccc;
+    /* border-right: 0; */
+    float: left;
+    padding: 1px 2px 1px 5px;
+    height: 17px\9;
+    padding-top: 3px\9;
+    color: #333;
+}
+.themeSortR .c span {
+    background-position: 0 -21px;
+    color: #E65A8D;
+    border: 1px solid #FFC2D9;
+    border-right: 0;
+    font-weight: 700;
+}
+.themeSortR i {
+    background-position: -10px 0;
+    width: 10px;
+    height: 23px;
+    display: block;
+    float: left;
+}
+.themeSortR .c i { background-position: -30px 0 }
+
+#news h2{font-size:1.5em; padding:0; margin:0; font-weight:normal}
+#news_data{position: relative;}
+#news_data h2{text-align:right; padding:10px 25px 20px 0}
+
+#news_data ul{margin: 0;padding: 0;}
+#news_data li.news{
+    list-style: none;
+    color: #000;
+    font-size: 13px;
+    margin: 0 0 10px 0;
+    text-align: left;
+    border-bottom: 1px dotted #BBE0EB;
+    padding: 5px 0;
+    margin-bottom: 4px;
+}
+#news_data li.news p{float:left;width:90%; font-size:13px;padding:0 5px 5px 12px;margin-bottom: 10px;
+border-bottom: 1px dashed #E7E7E7;}
+#news_data .news p.author{float:left; color:#418FA5; border:0; padding:3px 0 0 45px; margin:0; width:82%}
+#news_data .news p.author a{color:#86d734; font-weight:normal}
+#news_data .news p.author a:hover{text-decoration:underline}
+#news_data .news p.author:hover{background:none}
+#news_data .news a{margin-left: -4px;line-height: 1.8em;text-decoration:none; color:#000;font: 13px/18px 'open sans',sans-serif;padding: 0 5px}
+#news_data .news a:hover{text-decoration: underline;}
+#news_data .news a.continue{font-weight:normal}
+#leftcol .news a:hover{text-decoration:underline; color:#C93}
+#news_data .news strong{font-weight:normal}
+#news_data .news .title{color: #D62727;font-size: 14px}
+#news_data .news .category{line-height: 2em;color:#418FA5}
+#loading{width:100%; position:absolute; top:100px; left:100px; margin-top:200px}
+
+#news{text-align:left;padding-left: 10px;}
+#news .pagination ul {padding: 0;margin: 0;}
+#news .pagination ul li.inactive, #news .pagination ul li.inactive:hover{background-color:#ededed; color:#bababa; border:1px solid #bababa; cursor:default}
+
+#news .pagination ul li{list-style:none; float:left; border:1px solid #069; padding:2px 6px 2px 6px; margin:0 3px 0 3px; font-family:arial; font-size:14px; color:#069; font-weight:bold; background-color:#f2f2f2}
+#news .pagination ul li.active{color:#fff; background-color:#069; cursor:pointer}
+#news .pagination ul li:hover{color:#fff; background-color:#069; cursor:pointer}

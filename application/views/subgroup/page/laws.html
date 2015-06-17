@@ -1,0 +1,47 @@
+<{include file="subgroup/layout/include_header.html"}>
+<{include file="subgroup/layout/header.html"}>
+<div id=main>
+  	<{include file="subgroup/layout/left-sidebar.html"}>
+    <div id=groups_content>
+    <{include file="subgroup/layout/navigation.html"}>
+
+	<{$lawDatas|htmlspecialchars_decode}>
+	<style>
+
+	#laws_table {
+		text-align:left;
+		border:0;
+		cellspacing:0;
+		cellpadding:0;
+
+		letter-spacing: normal; 
+		orphans: auto; 
+		text-indent: 0px; 
+		text-transform: none; 
+		widows: auto; 
+		word-spacing: 0px; 
+		-webkit-text-stroke-width: 0px; 
+
+		width: 100%;"
+	}
+	#laws_table td{
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 10pt;
+		line-height: 20px;
+		color: #666666;
+		border-bottom-width: 1pt;
+		border-bottom-style: dotted;
+		border-bottom-color: #d4d4d4;
+		padding-top: 3px;
+		padding-bottom: 3px;
+	}
+	  #laws_table a{padding:1px 4px; background-color:#F30; color:#FFF; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
+      </style>
+    </div>
+    <{include file="subgroup/layout/right-sidebar.html"}> 
+    <div style="clear:both;"></div>
+    <{include file="subgroup/layout/footer.html"}>
+</div>
+
+</body>
+</html>

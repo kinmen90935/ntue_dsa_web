@@ -1,0 +1,37 @@
+<{include file="layout/include_header.html"}>
+</head><body>
+<div id="header_container">
+  <{include file="layout/header.html"}>
+    <map name="map">
+    <area shape=circle coords="20,20,25" href="https://http://dsa.ntue.edu.tw/">
+    </map>
+</div>
+<{include file="layout/menu.html"}>
+
+<div class="wrapper" id="main_wrapper">
+  <div id="main" class="wrap">
+    <div class="section group">
+      <div class="col span_12_of_12">
+        <!--置放最新消息-->
+        <div style="width: 95%;padding: 10px;position: relative;">
+          <h1 class="title">查看新聞</h1>
+          <div id="newsTitle" style="text-align:center;color:#000;padding: 8px 10px;font-size: 20px;margin-bottom: 10px;font-weight: 100;text-shadow: 1px 1px #F0F0F0;letter-spacing: -1px;line-height:24px;"><{$per_data.title|htmlspecialchars}></div>
+          <div id="newsInfo" style="text-align:right;">
+            <{$per_data.nc_title}>--<{$per_data.c_title}> 於 <{$per_data.post_date|date_format:"%Y-%m-%d"}></div>
+          <div id="newsContent">
+            <{$per_data.content|htmlspecialchars_decode}>
+          </div>
+          <{if ($preNid)}>
+            <a style="cursor:pointer; text-decoration:none; border-bottom:1px #e8840b solid; margin-top:20px; padding-right:20px;" href="per_news.php?n_id=<{$preNid}>">上一則</a>
+          <{/if}>
+          <{if ($nextNid)}>
+            <a style="cursor:pointer; text-decoration:none; border-bottom:1px #e8840b solid; margin-top:20px; padding-right:20px;" href="per_news.php?n_id=<{$nextNid}>">下一則</a>
+          <{/if}>
+          <a style="cursor:pointer; text-decoration:none; border-bottom:1px #e8840b solid; margin-top:20px; padding-right:20px;" href="index.php">返回最新消息</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<{include file="layout/footer.html"}>

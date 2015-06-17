@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="本處秉持「敦愛篤行」校訓理念，蘊育「敬業樂群、明理有禮」的優良校風，以培養優良師資和專業人才。依組織規程，設置生活輔導、課外活動指導、衛生保健、心理輔導、體育及軍訓等六組室，另設有資源教室直接隸屬學務長室。">
+<link rel="image_src" href="#"/>
+<meta property="og:image" content="#"/>
+<meta name="robots" content="index" />
+<meta property="og:title" content="國立臺北教育大學學生事務處"/>
+<meta property="og:description" content="本處秉持「敦愛篤行」校訓理念，蘊育「敬業樂群、明理有禮」的優良校風，以培養優良師資和專業人才。依組織規程，設置生活輔導、課外活動指導、衛生保健、心理輔導、體育及軍訓等六組室，另設有資源教室直接隸屬學務長室。"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="http://dsa.ntue.edu.tw/"/>
+<meta name="keywords" content="國北教,留言板,學生,事務,學生事務,國立台北教育大學,國立臺北教育大學">
+<meta property="og:site_name" content="國立臺北教育大學 學生事務處"/>
+<title>國立臺北教育大學-學生事務處留言板</title>
+<link rel="shortcut icon" href="../favicon.png">
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/rwd-4.css" rel="stylesheet" type="text/css" />
+<link href="css/message.css" rel="stylesheet" type="text/css" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="inner">
+  <header>
+    <div class="section group">
+      <div class="col span_3_of_8"><h1><a href="message.php">NTUE 學務處留言板</a></h1></div>
+      <div class="col span_5_of_8">
+        <nav class="clearfix">
+          <ul class="clearfix">
+            <li><a href="index.php">學務處</a></li>
+            <li><a href="groups/index.php?cname=life">生輔組</a></li>
+            <li><a href="groups/index.php?cname=activity">課活組</a></li>
+            <li><a href="groups/index.php?cname=health">衛保組</a></li>
+            <li><a href="groups/index.php?cname=psy">心輔組</a></li>
+            <li><a href="groups/index.php?cname=military">軍訓室</a></li>
+            <li><a href="groups/index.php?cname=phy">體育室</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <div class="section group">
+    <div class="col span_8_of_8">
+      <div id="rule">
+      <div class="title">版規</div>
+      <p>
+      一、  此留言版係為促進本校師生與學務處良好溝通所設立，歡迎對學務處相關業務提出問題或建議，並請遵守校園網路使用規範。<br />
+      二、  請將留言或問題正確提出，俾利正確回應。<br />
+      三、  凡涉廣告及人身攻擊、無理謾罵之留言一律刪除。<br />
+      四、  非學務處所屬業務建請直接洽詢相關業務單位辦理，以迅速獲得解答。<br />
+
+      </p>
+      <a  href="postMsg.php" class="classname">我要發言</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section group">
+    <div class="col span_6_of_8">
+      <div id="pagination">
+        <ul>
+          <{for $page_num=1 to floor($num_msg/5)+1}>
+          <li><a href="message.php?page=<{$page_num}>" <{if $page_num == $cur_page}>class="actived"<{/if}> ><{$page_num}></a></li>
+          <{/for}>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="section group" style="min-height:650px;">
+    <div class="col span_5_of_8">
+    <{foreach from=$msg_datas item=msg}>
+    <div class="post">
+      <div class="date">
+        <div class="datediv"><{$msg.post_time|date_format:"%Y-%m-%d"}></div>
+      </div>
+      <div class="articletext">
+        <h3 class="title"><{$msg.title}></h3>
+        <div class="innertext"> <{$msg.content}> </div>
+        <br clear="all">
+      </div>
+      <div class="posted">
+        <{$msg.author}>
+        <span><{$msg.post_time|date_format:"%Y-%m-%d"}>&nbsp;發布&nbsp;|</span>
+        <a href="reply_message.php?msg_id=<{$msg.msg_id}>">(<{$msg.replyCount}>)則回覆</a>&nbsp;|&nbsp;
+        <a style="color:#0000E4;" href="reply_message.php?msg_id=<{$msg.msg_id}>"><i class="fa fa-reply"></i>&nbsp;我要回覆</a>
+      </div>
+    </div>
+    <{/foreach}>
+    </div>
+    <div class="col span_3_of_8">
+      <style type="text/css">
+        .fb-like-box, .fb-like-box span, .fb-like-box.fb_iframe_widget span iframe {
+          width: 100% !important;
+      }
+      </style>
+      <div id="fbAPI">
+        <div id="fb-root"></div>
+          <script>
+          window.fbAsyncInit = function() {
+            // init the FB JS SDK
+            FB.init({
+              appId      : 328703957264466,                        // App ID from the app dashboard
+              status     : true,                                 // Check Facebook Login status
+              xfbml      : true                                  // Look for social plugins on the page
+            });
+
+            // Additional initialization code such as adding Event Listeners goes here
+          };
+
+          // Load the SDK asynchronously
+          (function(){
+             // If we've already installed the SDK, we're done
+             if (document.getElementById('facebook-jssdk')) {return;}
+
+             // Get the first script element, which we'll use to find the parent node
+             var firstScriptElement = document.getElementsByTagName('script')[0];
+
+             // Create a new script element and set its id
+             var facebookJS = document.createElement('script');
+             facebookJS.id = 'facebook-jssdk';
+
+             // Set the new script's source to the source of the Facebook JS SDK
+             facebookJS.src = '//connect.facebook.net/en_US/all.js';
+
+             // Insert the Facebook JS SDK into the DOM
+             firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
+           }());
+        </script>
+          <div id="fb-root"></div>
+          <script>(function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=328703957264466";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+          <div style="background-color:#fff;" class="fb-like-box" data-href="https://www.facebook.com/pages/%E5%9C%8B%E7%AB%8B%E8%87%BA%E5%8C%97%E6%95%99%E8%82%B2%E5%A4%A7%E5%AD%B8/272630449513425?fref=ts" data-colorscheme="light" data-show-faces="true" data-width="360" data-height="600" data-header="true" data-stream="true" data-show-border="true"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="section group">
+    <div class="col span_8_of_8">
+      <p> 校址：10671臺北市大安區和平東路二段134號 總機電話：+886-2-2732-1104 +886-2-6639-6688<br/>
+    CopyRight 2014 National Taipei University of Education Department of Student Affairs. All Rights Reserved.|Powered By Yong Huang</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

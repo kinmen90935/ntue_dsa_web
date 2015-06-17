@@ -1,0 +1,19 @@
+<ul>
+	<li <{if $cur_page != 1}>p="1" class="active"<{else}>class="inactive"<{/if}>>第一頁</li>
+    <li <{if $cur_page > 1 }> p="<{$cur_page - 1}>"  class="active"<{else}>class="inactive"<{/if}>>前一頁</li>
+    <{if $no_of_paginations > 4}>
+        <{for $page = (($page_target - 1) * 4 + 1) to $end_page_target}>
+        <li <{if $cur_page == $page}>style="color:#fff; background-color:#006699;"<{/if}> class="active" data-p="<{$page}>"><{$page}></li>
+        <{/for}>
+    <{else}>
+        <{for $page = 1 to $no_of_paginations}>
+        <li <{if $cur_page == $page}>style="color:#fff; background-color:#006699;"<{/if}> class="active" data-p="<{$page}>"><{$page}></li>
+        <{/for}>
+    <{/if}>    
+	<li <{if $cur_page < $no_of_paginations}>class="active" p="<{$cur_page + 1}>"<{else}>class="inactive"<{/if}> >下一頁</li>
+	<li <{if $cur_page == $no_of_paginations}>class="inactive"<{else}>p="<{$no_of_paginations}>"class="active"<{/if}> >最後一頁</li>
+</ul>
+<!--<input type="text" class="goto" size="1" style="margin-top:-1px;margin-left:60px;">
+  <input type="button" id="go_btn" class="go_button" value="Go">
+  <span class="total" a="2">--> 
+  頁數 <b><{$cur_page}></b>/<b><{$no_of_paginations}></b></span>

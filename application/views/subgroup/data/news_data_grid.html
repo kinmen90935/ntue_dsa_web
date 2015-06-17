@@ -1,0 +1,16 @@
+<ul>
+  <{foreach from=$msg_datas item=per_msg}>
+  <li class="news">
+    <p>
+        <div><span class="newCategory"><{$per_msg.nc_title}></span>
+        <span style="color: #3F71CA;">
+        	<{$per_msg.post_date|date_format:"%Y-%m-%d"}>
+        </span>
+        </div>
+    	<div class="newTitle">
+    	<a href="../per_news.php?n_id=<{$per_msg.n_id}>" target="_blank"><{$per_msg.title}></a>
+        </div>
+    </p>
+  </li>
+  <{/foreach}>
+</ul>

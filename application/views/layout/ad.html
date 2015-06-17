@@ -1,0 +1,28 @@
+<div id="ad">
+<!-- 客製化選單區-->
+	<{if ($right_menu_items)}>
+	<h1 class="title"><i class="fa fa-thumb-tack"></i>&nbsp;本處室業務</h1>
+    <ul id=rightMenuBar>
+    <{foreach from=$right_menu_items key=k item=item}>
+      <li><i class="fa fa-tasks"></i>&nbsp;<a href="custom.php?custom_id=<{$k}>"><{$item}></a></li>
+    <{/foreach}>
+    </ul>
+    <{/if}>
+  </ul>
+  <!-- 客製化選單區-->
+  <h1 class="title"><i class="fa fa-sun-o"></i>&nbsp;熱門活動</h1>
+  <div class="slider-wrapper theme-light">
+    <div id="nivo_activity_slider" class="nivoSlider">
+    <a href="#">
+    <img src="<{$UPLOAD_ROOT}>/<{$group_name}>/activity/activity_1.jpg" data-thumb="<{$UPLOAD_ROOT}>/<{$group_name}>activity/activity_1.jpg" alt="" title="國立臺北教育大學學生事務處" /></a>
+    <img src="<{$UPLOAD_ROOT}>/<{$group_name}>/activity/activity_2.jpg" data-thumb="<{$UPLOAD_ROOT}>/<{$group_name}>activity/activity_2.jpg" alt="" />
+    <img src="<{$UPLOAD_ROOT}>/<{$group_name}>/activity/activity_3.jpg" data-thumb="<{$UPLOAD_ROOT}>/<{$group_name}>activity/activity_3.jpg" alt="" title="#htmlcaption" />
+    <img src="<{$UPLOAD_ROOT}>/<{$group_name}>/activity/activity_4.jpg" alt="" data-transition="slideInLeft" /> </div>
+    <div id="htmlcaption" class="nivo-html-caption"> <strong>國北教大學務處</strong></div>
+  </div>
+  <{if ($video)}>
+  <h1 class="title"><i class="fa fa-video-camera"></i>&nbsp;宣導影片</h1>
+    <{$video.embedHtml}>
+  <div style="padding: 6px;border-bottom: 1px solid #D3D3D3;"><{$video.title}> </div>
+  <{/if}>
+</div>

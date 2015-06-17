@@ -1,0 +1,16 @@
+<{include file="subgroup/layout/include_header.html"}>
+<{include file="subgroup/layout/header.html"}>
+<div id=main>
+  	<{include file="subgroup/layout/left-sidebar.html"}>
+    <div id=groups_content>
+    	<{include file="subgroup/layout/navigation.html"}>
+        <div style="width:100%; margin: 0 auto; padding:0px;">
+            <{$aboutus.content|htmlspecialchars_decode}>
+    	</div>
+    </div>
+    <{include file="subgroup/layout/right-sidebar.html"}>
+    <div style="clear:both;"></div>
+    <{include file="subgroup/layout/footer.html"}>
+</div>
+</body>
+</html>

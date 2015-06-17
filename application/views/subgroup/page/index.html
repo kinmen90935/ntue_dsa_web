@@ -1,0 +1,38 @@
+<{include file="subgroup/layout/include_header.html"}>
+<{include file="subgroup/layout/header.html"}>
+<div id=main>
+  	<{include file="subgroup/layout/left-sidebar.html"}>
+    <div id=groups_content>
+    	<{include file="subgroup/layout/navigation.html"}>
+    	<div id="msg"></div>
+        <div id="loading" style="display: none;"></div>
+        <div id="container">
+          <div class="data"> <{include file="subgroup/data/news_data_grid.html"}> </div>
+          <div style="clear:both"></div>
+          <div class="pagination"><{include file="subgroup/data/pagination.html"}> </div>
+        </div>
+    </div>
+    <{include file="subgroup/layout/right-sidebar.html"}> 
+    <div style="clear:both;"></div>
+    <{include file="subgroup/layout/footer.html"}>
+</div>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	$('#container').on( "click", ".pagination li", function(e) {
+		load_news($(this).data('p'));
+	});
+});
+
+function load_news(page)
+{
+	$.get("index.php?cname=<{$group_name}>", {'page': page}, function(rtn) {
+		if (rtn.status) {
+			$('.data').html(rtn.data_html);
+			$('.pagination').html(rtn.pagination_html);
+		}
+	}, "json" );
+}
+
+</script>
+</body>
+</html>
